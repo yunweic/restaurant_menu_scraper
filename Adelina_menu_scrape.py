@@ -4,8 +4,9 @@ import urllib.request
 import pandas as pd
 
 from web_page_loader import WebPage
-        
-url = 'http://www.adelinasbk.com/menu-1'
+
+# URL of the restaurnat menue
+url = 'https://app.upserve.com/s/adelinas-brooklyn'
 page_to_scrape = WebPage(url)
 
 # Use BeautifulSoup to parse the HTML
@@ -26,4 +27,5 @@ for item in menu_item_descriptions:
 
 res_df = pd.DataFrame({'dish':title, 'description':desc})
 
+# store the result into CSV files.
 res_df.to_csv('result.csv')
